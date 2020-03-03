@@ -1,0 +1,279 @@
+<?php
+/** 
+ * Classe d'accès aux données. 
+ 
+ * Utilise les services de la classe PDO
+ * pour l'application pgsp
+ * Les attributs sont tous statiques,
+ * les 4 premiers pour la connexion
+ * $monPdo de type PDO 
+ * $monPdoGsb qui contiendra l'unique instance de la classe
+ *
+ * @package default
+ * @author Cheri Bibi
+ * @version    1.0
+ * @link       http://www.php.net/manual/fr/book.pdo.php
+ */
+
+class PdoPgsp
+{   		
+      	private static $serveur='mysql:host=localhost';
+      	private static $bdd='dbname=pgsp';   		
+      	private static $user='root' ;    		
+      	private static $mdp='' ;	
+		private static $monPdo;
+		private static $monPdoPgsp = null;
+/**
+ * Constructeur privé, crée l'instance de PDO qui sera sollicitée
+ * pour toutes les méthodes de la classe
+ */				
+	private function __construct()
+	{
+        self::$monPdo = new PDO(self::$serveur.';'.self::$bdd, self::$user, self::$mdp); 
+        self::$monPdo->query("SET CHARACTER SET utf8");
+	}
+	public function _destruct(){
+		self::$monPdo = null;
+	}
+/**
+ * Fonction statique qui crée l'unique instance de la classe
+ *
+ * Appel : $instancePdoPgsp = self::getPdoHtAuto();
+ * @return l'unique objet de la classe PdoHtAuto
+ */
+	public  static function getPdoPgsp()
+	{
+		if(self::$monPdoPgsp == null)
+		{
+			self::$monPdoPgsp = new PdoPgsp();
+		}
+		return self::$monPdoPgsp;  
+	}
+
+/**
+ * Retourne l'utilisateur connecté sous forme d'un tableau associatif
+ *
+ * @return l'utisateur 
+*/        
+    public function getUser($login,$mdp)
+        {
+            $req = "select * from gestionnaire where login = '" . $login . "' and mdp = '" . $mdp . "'";
+            $res =  self::$monPdo->query($req);
+            $ligne= $res->fetch();
+            return $ligne;
+        }
+/**
+ * Retourne les id de tous les stages
+ *
+ * @return les id 
+*/        
+public function getLesIdStages()
+{
+	$req = "select id from stage";
+	$res =  self::$monPdo->query($req);
+	$lesLignes = $res->fetchAll();
+	return $lesLignes;
+}
+/**
+ * Retourne les stagiaires d'une option
+ *
+ * @return les id, nom et prenom des stagiaires 
+*/        
+public function getLesStagiaires($option)
+{
+	$req = "select id, nom, prenom  from stagiaire where optionS = '" . $option . "'";
+	$res =  self::$monPdo->query($req);
+	$lesLignes = $res->fetchAll();
+	return $lesLignes;
+}
+
+/**
+ * Retourne le stagiaire par id
+ * @param l'id du stagiaire
+ * @return tous les champs 
+*/        
+public function getLeStagiaire($id)
+{
+	$req = "select * from stagiaire where id = '" . $id . "'";
+	$res =  self::$monPdo->query($req);
+	$laLigne = $res->fetch();
+	return $laLigne;
+}
+/**
+ * Ajoute un stagiaire
+ *
+ * @return si la requête s'est bien effectuée
+*/
+public function ajouterStagiaire($nom, $prenom, $tel, $mail, $promotion){
+	$option = $_SESSION['option'];
+	$req = "insert into stagiaire(nom, prenom, telephone, mail, promotion, optionS)  values('$nom', '$prenom', '$tel', '$mail', '$promotion','$option')";
+	$res = self::$monPdo->exec($req);
+	return $res;
+}
+/**
+ * mise à jour d'un stagiaire
+ *
+ * @return si la requête s'est bien effectuée
+*/
+public function modifierStagiaire($id,$nom,$prenom ,$tel,$mail,$promotion){
+	$req = "update stagiaire set nom = '" . $nom ."'";
+	$req .= ", prenom = '" . $prenom ."'";
+	$req .= ", mail = '" . $mail ."'";
+	$req .= ", telephone = '" . $tel ."'";
+	$req .= ", promotion = '" .$promotion ."'";
+	$req .= " where id = " . $id;
+	$res = self::$monPdo->exec($req);
+	return $res;
+}
+
+/**
+ * Retourne les entreprises d'une option
+ *
+ * @return les id, raison sociale et adresse des entreprises 
+*/        
+public function getLesEntreprises()
+{
+	$req = "select id, raisonSociale, adresse  from entreprise ";
+	$res =  self::$monPdo->query($req);
+	$lesLignes = $res->fetchAll();
+	return $lesLignes;
+}
+/**
+ * Ajoute une entreprise
+ *
+ * @return si la requête s'est bien effectuée
+*/
+public function ajouterEntreprise($raison, $adresse, $tel, $nomPrenom, $mail){
+	$req = "insert into entreprise(raisonSociale, adresse, telResponsable, mailResponsable, nomPrenomResponsable)  values('$raison', '$adresse', '$tel', '$mail', '$nomPrenom' )";
+	$res = self::$monPdo->exec($req);
+	return $res;
+
+}
+
+/**
+ * Retourne une entreprise par id
+ * @param l'id de l'entreprise
+ * @return tous les champs 
+*/
+public function getEntreprise($id)
+{
+    $req = "select * from entreprise where id = '" . $id . "'";
+    $res =  self::$monPdo->query($req);
+    $laLigne = $res->fetch();
+    return $laLigne;
+}
+/**
+ * Modifie une entreprise
+ * @param les champs l'entreprise
+ * @return si la requête s'est bien passée
+*/
+public function modifierEntreprise($id ,$raisonSociale ,$nomPrenom ,$tel ,$mail ,$adresse){
+	$req = "update entreprise set raisonSociale = '" . $raisonSociale ."'";
+	$req .= ", nomPrenomResponsable = '" . $nomPrenom . "'";
+	$req .= ", telResponsable = '" . $tel . "'";
+	$req .= ", mailResponsable = '" . $mail . "'";
+	$req .= ", adresse = '" . $adresse . "'";
+	$req .= " where id = " . $id ;
+	$res = self::$monPdo->exec($req);
+	return $res;
+
+}
+
+/**
+ * Retourne les stages
+ *
+ * @return tous  les champs
+*/        
+public function getLesStages()
+{
+	$req = "select *  from stage";
+	$res =  self::$monPdo->query($req);
+	$lesLignes = $res->fetchAll();
+	return $lesLignes;
+}
+
+public function modifierStages($id,$debut, $fin){
+	$req = "update stage set dateDebut = '" . $debut . "'";
+	$req .= ", dateFin = '" . $fin . "'";
+	$req .= " where id = '" . $id . "'";
+	$res = self::$monPdo->exec($req);
+	return $res;
+}
+
+/**
+ * Ajoute un stage
+ *
+ * @return si la requête s'est bien effectuée
+*/
+public function ajouterStage($id, $debut, $fin){
+	$req = "insert into stage values('$id', '$debut', '$fin')";
+	$res = self::$monPdo->exec($req);
+	return $res;
+}
+/**
+ * Retourne la raison sociale de l'entreprise d'un stagiaire pour un stage
+ *
+ * @return si la requête s'est bien effectuée
+*/
+public function getNomEntrepriseStagiaire($idStagiaire,$stage )
+{
+    $req = "select entreprise.raisonSociale as raison from convention, entreprise where convention.idEntreprise = entreprise.id ";
+    $req .= " and  '" . $idStagiaire . "' = convention.idStagiaire and convention.idStage = '" . $stage ."'";
+    $res =  self::$monPdo->query($req);
+    $laLigne = $res->fetch();
+    return $laLigne['raison'];
+}
+/**
+ * Retourne les formateurs
+ *
+ * @return si la requête s'est bien effectuée
+*/
+public function getLesFormateurs()
+{
+    $req = "select id, nomPrenomFormateur  from formateur ";
+    $res =  self::$monPdo->query($req);
+    $lesLignes = $res->fetchAll();
+    return $lesLignes;
+}
+
+
+/**
+ * Retourne les stagiaires et le booleen de la conventiond'une option 
+ *
+ * @return les id, nom et prenom des stagiaires et booleen de la convention
+*/        
+public function getLesStagiairesConvention($option)
+{
+	$req = "select stagiaire.id, nom, prenom, conventionO_N from stagiaire LEFT OUTER JOIN convention on 
+	stagiaire.id = convention.idStagiaire where optionS = '" . $option . "'";
+	$res =  self::$monPdo->query($req);
+	$lesLignes = $res->fetchAll();
+	return $lesLignes;
+}
+
+/**
+ * Ajoute une covention
+ *
+ * @return si la requête s'est bien effectuée
+*/
+public function ajoutConvention($id, $nomPrenomTuteur, $telTuteur, $mailTuteur,  $idStagiaire, $idStage, $idEntreprise, $idFormateur)
+{
+    $req = "insert into convention (id, nomPrenomTuteur, telTuteur, mailTuteur, conventionO_N, idStagiaire, idStage, idEntreprise, idFormateur)
+     values('$id', '$nomPrenomTuteur', '$telTuteur', '$mailTuteur', 1, '$idStagiaire', '$idStage', '$idEntreprise', '$idFormateur')";
+	 $res = self::$monPdo->exec($req);
+     return $res;
+}
+
+
+	} // fin classe 
+	
+
+
+	
+
+	
+
+
+
+
+?>
