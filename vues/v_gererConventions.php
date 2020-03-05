@@ -11,16 +11,16 @@ foreach ($lesStagiaires as $ligne)
     $id = $ligne['id'];
     $nom = $ligne['nom'];
     $prenom = $ligne['prenom'];
-    $conventionON = $ligne['conventionO_N'];
+    $idConvention = $ligne['idConvention'];
     ?>
     <tr>
         <td><?= $nom ?></td>
         <td><?= $prenom ?></td>
         <td>
-        <?php if($conventionON == NULL){  ?>
+        <?php if($idConvention == NULL){  ?>
         <a href="index.php?uc=gererConventions&action=ajouter&id=<?= $id ?>" style="color:blue">Création d'une convention
         <?php }else { ?>
-            <a href="index.php?uc=gererConventions&action=modifier&id=<?= $id ?>" style="color:blue">Modification d'une convention
+            <a href="index.php?uc=gererConventions&action=modifier&id=<?= $id ?>&idConvention=<?= $idConvention ?>" style="color:blue">Modification d'une convention
         <?php }?>
         </td>
         

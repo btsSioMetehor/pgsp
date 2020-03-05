@@ -244,7 +244,7 @@ public function getLesFormateurs()
 */        
 public function getLesStagiairesConvention($option)
 {
-	$req = "select stagiaire.id, nom, prenom, conventionO_N from stagiaire LEFT OUTER JOIN convention on 
+	$req = "select stagiaire.id, nom, prenom, convention.id as idConvention from stagiaire LEFT OUTER JOIN convention on 
 	stagiaire.id = convention.idStagiaire where optionS = '" . $option . "'";
 	$res =  self::$monPdo->query($req);
 	$lesLignes = $res->fetchAll();
@@ -252,7 +252,7 @@ public function getLesStagiairesConvention($option)
 }
 
 /**
- * Ajoute une covention
+ * Ajoute une convention
  *
  * @return si la requête s'est bien effectuée
 */
@@ -260,6 +260,7 @@ public function ajoutConvention($id, $nomPrenomTuteur, $telTuteur, $mailTuteur, 
 {
     $req = "insert into convention (id, nomPrenomTuteur, telTuteur, mailTuteur, conventionO_N, idStagiaire, idStage, idEntreprise, idFormateur)
      values('$id', '$nomPrenomTuteur', '$telTuteur', '$mailTuteur', 1, '$idStagiaire', '$idStage', '$idEntreprise', '$idFormateur')";
+	
 	 $res = self::$monPdo->exec($req);
      return $res;
 }
