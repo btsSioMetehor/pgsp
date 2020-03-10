@@ -235,8 +235,30 @@ public function getLesFormateurs()
     $lesLignes = $res->fetchAll();
     return $lesLignes;
 }
+/**
+ * Ajoute un formateur
+ *
+ * @return si la requête s'est bien effectuée
+*/
+public function ajouterFormateur($nomPrenom){
+	$req = "insert into formateur(nomPrenomFormateur)  values('$nomPrenom')";
+	$res = self::$monPdo->exec($req);
+	return $res;
 
+}
+/**
+ * Modifie un formateur
+ * @param les champs du formateur
+ * @return si la requête s'est bien passée
+*/
+public function modifierFormateur($id ,$nomPrenom ){
+	$req = "update formateur set nomPrenomFormateur = '" . $nomPrenom ."'";
+	$req .= " where id = " . $id ;
+	var_dump($req);
+	$res = self::$monPdo->exec($req);
+	return $res;
 
+}
 /**
  * Retourne les stagiaires et le booleen de la conventiond'une option 
  *
@@ -244,6 +266,7 @@ public function getLesFormateurs()
 */        
 public function getLesStagiairesConvention($option)
 {
+	$stage = $_SESSION['stage'];
 	$req = "select stagiaire.id, nom, prenom, convention.id as idConvention from stagiaire LEFT OUTER JOIN convention on 
 	stagiaire.id = convention.idStagiaire where optionS = '" . $option . "'";
 	$res =  self::$monPdo->query($req);
@@ -256,16 +279,30 @@ public function getLesStagiairesConvention($option)
  *
  * @return si la requête s'est bien effectuée
 */
-public function ajoutConvention($id, $nomPrenomTuteur, $telTuteur, $mailTuteur,  $idStagiaire, $idStage, $idEntreprise, $idFormateur)
+public function ajoutConvention($nomPrenomTuteur, $telTuteur, $mailTuteur,  $idStagiaire, $idStage, $idEntreprise, $idFormateur)
 {
-    $req = "insert into convention (id, nomPrenomTuteur, telTuteur, mailTuteur, conventionO_N, idStagiaire, idStage, idEntreprise, idFormateur)
-     values('$id', '$nomPrenomTuteur', '$telTuteur', '$mailTuteur', 1, '$idStagiaire', '$idStage', '$idEntreprise', '$idFormateur')";
+    $req = "insert into convention ( nomPrenomTuteur, telTuteur, mailTuteur, conventionO_N, idStagiaire, idStage, idEntreprise, idFormateur)
+     values( '$nomPrenomTuteur', '$telTuteur', '$mailTuteur', 1, '$idStagiaire', '$idStage', '$idEntreprise', '$idFormateur')";
 	
 	 $res = self::$monPdo->exec($req);
      return $res;
 }
 
-
+/**
+ * Retourne la convention et toutes les infos pour MAJ à partir de son id 
+ *
+ * @return les information convention
+*/        
+public function getConvention($id)
+{
+    $req = "select nomPrenomTuteur, telTuteur,mailTuteur, nomPrenomFormateur, raisonSociale from convention 
+    inner join formateur on convention.idFormateur = formateur.id 
+    inner join entreprise on convention.idEntreprise = entreprise.id
+    where convention.id = '" . $id . "'";
+    $res =  self::$monPdo->query($req);
+    $laLigne = $res->fetch();
+    return $laLigne;
+}
 	} // fin classe 
 	
 

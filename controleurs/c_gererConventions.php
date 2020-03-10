@@ -17,15 +17,10 @@
             $stagiaire = $pdo->getLeStagiaire($id);
             include("vues/v_ajouterConvention.php");
         break;
-
-        case "modifier" :
-            include("vues/v_sommaire.php");
-        //    include("vues/v_modifierEntreprise.php");
-            break;
-             
+ 
         case "enregistrerAjout" :
             include("vues/v_sommaire.php");
-                $id=$_REQUEST['id'];
+              //  $id = $_REQUEST['id'];
                 $nomPrenomTuteur = $_REQUEST['nomPrenomTuteur'];
                 $telTuteur = $_REQUEST['telTuteur'];
                 $mailTuteur = $_REQUEST['mailTuteur'];
@@ -33,7 +28,7 @@
                 $idEntreprise = $_REQUEST['entreprise'];
                 $idFormateur =$_REQUEST['formateur'];
                $idStage = $_SESSION['stage'];
-                $res = $pdo->ajoutConvention($id, $nomPrenomTuteur, $telTuteur, $mailTuteur,  $idStagiaire, $idStage, $idEntreprise, $idFormateur);
+                $res = $pdo->ajoutConvention($nomPrenomTuteur, $telTuteur, $mailTuteur,  $idStagiaire, $idStage, $idEntreprise, $idFormateur);
             if($res != 0)
                 $message = "Convention ajoutée";
             else
@@ -41,7 +36,21 @@
 
             include("vues/v_message.php");
             break;
-
+            case "modifier" :
+                include("vues/v_sommaire.php");
+                $id = $_REQUEST['id'];
+                $idConvention =$_REQUEST['idConvention'];
+                $convention = $pdo->getConvention($idConvention);
+                $nomPrenomFormateur = $convention['nomPrenomFormateur'];
+                $nomPrenomTuteur = $convention['nomPrenomTuteur'];
+                $telTuteur = $convention['telTuteur'];
+                $mailTuteur = $convention['mailTuteur'];
+                $raisonSociale = $convention['raisonSociale'];
+                $raisons = $pdo->getLesEntreprises();
+                $formateurs = $pdo->getLesFormateurs();
+                $stagiaire = $pdo->getLeStagiaire($id);
+                include("vues/v_modifierConvention.php");
+                break;
     
       /*  case "imprimer":
             $idStagiaire = $_REQUEST['idStagiaire'];

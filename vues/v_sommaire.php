@@ -25,6 +25,9 @@
            <li class="smenu">
               <a href="index.php?uc=gererEntreprises&action=voir" title="voir les entreprises">Gérer les entreprises</a>
            </li>
+           <li class="smenu">
+              <a href="index.php?uc=gererFormateurs&action=voir" title="voir les formateurs">Gérer les formateurs</a>
+           </li>
            <!-- <li class="smenu">
               <a href="index.php?uc=gererDemandes&action=voir" title="voir les stagiaires">Gérer les demandes de convention</a>
            </li> -->
