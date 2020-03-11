@@ -75,13 +75,15 @@ public function getLesIdStages()
 	return $lesLignes;
 }
 /**
- * Retourne les stagiaires d'une option
+ * Retourne les stagiaires d'une option et d'une promotion
  *
  * @return les id, nom et prenom des stagiaires 
 */        
 public function getLesStagiaires($option)
 {
+	$promotion = substr($_SESSION['stage'], 0, 4);
 	$req = "select id, nom, prenom  from stagiaire where optionS = '" . $option . "'";
+	$req .= " and promotion = '" . $promotion . "'";
 	$res =  self::$monPdo->query($req);
 	$lesLignes = $res->fetchAll();
 	return $lesLignes;
@@ -210,19 +212,7 @@ public function ajouterStage($id, $debut, $fin){
 	$res = self::$monPdo->exec($req);
 	return $res;
 }
-/**
- * Retourne la raison sociale de l'entreprise d'un stagiaire pour un stage
- *
- * @return si la requête s'est bien effectuée
-*/
-public function getNomEntrepriseStagiaire($idStagiaire,$stage )
-{
-    $req = "select entreprise.raisonSociale as raison from convention, entreprise where convention.idEntreprise = entreprise.id ";
-    $req .= " and  '" . $idStagiaire . "' = convention.idStagiaire and convention.idStage = '" . $stage ."'";
-    $res =  self::$monPdo->query($req);
-    $laLigne = $res->fetch();
-    return $laLigne['raison'];
-}
+
 /**
  * Retourne les formateurs
  *
@@ -266,9 +256,9 @@ public function modifierFormateur($id ,$nomPrenom ){
 */        
 public function getLesStagiairesConvention($option)
 {
-	$stage = $_SESSION['stage'];
+	$idStage = $_SESSION['stage'];
 	$req = "select stagiaire.id, nom, prenom, convention.id as idConvention from stagiaire LEFT OUTER JOIN convention on 
-	stagiaire.id = convention.idStagiaire where optionS = '" . $option . "'";
+	stagiaire.id = convention.idStagiaire where optionS = '" . $option . "' and idStage = '" . $idStage . "'";
 	$res =  self::$monPdo->query($req);
 	$lesLignes = $res->fetchAll();
 	return $lesLignes;
