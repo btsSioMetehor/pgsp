@@ -293,10 +293,22 @@ public function getConvention($id)
     $laLigne = $res->fetch();
     return $laLigne;
 }
-	} // fin classe 
 	
+	
+/**
+ * maj de la convention 
+ *
+ * @return 
+*/ 
 
-
+public function enregModifsConvention($idConvention, $idFormateur,$idEntreprise,$nomPrenomTuteur,$mailTuteur,$telTuteur){
+	$req = "update convention set idFormateur = " . $idFormateur . ", idEntreprise = " . $idEntreprise ;
+	$req .= ", nomPrenomTuteur = '" . $nomPrenomTuteur . "' , mailTuteur = '" . $mailTuteur . "'";
+	$req .= ", telTuteur = '" . $telTuteur . "' where id =  $idConvention "  ;
+	$res = self::$monPdo->exec($req);
+	return $res;
+}
+} // fin classe 
 	
 
 	

@@ -49,10 +49,31 @@
                 $raisons = $pdo->getLesEntreprises();
                 $formateurs = $pdo->getLesFormateurs();
                 $stagiaire = $pdo->getLeStagiaire($id);
+                include("vues/v_modifierConvention.ph        case "enregistrerModifications":
+                include("vues/v_sommaire.php");
+                $idFormateur = $_REQUEST['formateur'];
+                $idEntreprise = $_REQUEST['entreprise'];
+                $idConvention =  $_SESSION['idConvention'];
+                $mailTuteur = $_REQUEST['mailTuteur'];
+                $telTuteur = $_REQUEST['telTuteur'];
+                $nomPrenomTuteur = $_REQUEST['nomPrenomTuteur'];
+                $res = $pdo->enregModifsConvention($idConvention, $idFormateur,$idEntreprise,$nomPrenomTuteur,$mailTuteur,$telTuteur);
+                $convention = $pdo->getConvention($idConvention);
+                $nomPrenomFormateur = $convention['nomPrenomFormateur'];
+                $idStagiaire = $convention['idStagiaire'];
+                $stagiaire = $pdo->getLeStagiaire( $idStagiaire);
+                $raisons = $pdo->getLesEntreprises();
+                $formateurs = $pdo->getLesFormateurs();
+                $raisonSociale = $convention['raisonSociale'];
                 include("vues/v_modifierConvention.php");
-                break;
-    
-       case "imprimer":
+               
+                if($res != 0)
+                    $message = "Convention mise à jour";
+                else
+                    $message = "Merci de recommencer ultérieurement";
+                include("vues/v_message.php");
+        break;
+        case "imprimer":
             $idStage = $_SESSION['stage'];
             $idConvention = $_SESSION['idConvention'];
             $convention = $pdo->getConvention($idConvention);
@@ -61,7 +82,8 @@
             $stagiaire = $pdo->getLeStagiaire($idStagiaire);
             $entreprise = $pdo->getEntreprise($idEntreprise);
             $url = "location: vues/pdf_convention.php?";
-            $url .= "stagiaire=" . serialize($stagiaire); // pour faire passer un tableau dans l'url
+            $url.= "formateur=" . $formateur;
+            $url .= "&stagiaire=" . serialize($stagiaire); // pour faire passer un tableau dans l'url
             $url .=  "&entreprise=" . serialize($entreprise);
             header($url);
          break;

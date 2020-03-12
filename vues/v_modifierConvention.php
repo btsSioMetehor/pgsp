@@ -1,11 +1,7 @@
 <div id="contenu">
 <h1><b></b></h1>
-    <form method = "post" action = "index.php?uc=gererConventions&action=modifierConvention&id=<?= $id ?>">
+    <form method = "post" action = "index.php?uc=gererConventions&action=enregistrerModifications">
     
-    
-        <input type = "hidden" name = "id" value = "<?= $id?>">
-
-        
         <p>Nom du stagiaire : <?= $stagiaire['nom'] ?></p>
         
         <p>Prenom du stagiaire : <?= $stagiaire['prenom'] ?></p>
