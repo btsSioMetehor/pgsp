@@ -15,7 +15,7 @@
         <p id="modifEntreprise">Modifier l'entreprise :
             <select name="entreprise">
                 <?php foreach($raisons as $ligne){ ?>
-                    <option value = "<?= $ligne['raisonSociale']?>"><?= $ligne['raisonSociale']?></option>'>
+                    <option value = "<?= $ligne['id']?>"><?= $ligne['raisonSociale']?></option>'>
                 <?php } ?>
             </select>
         
@@ -29,10 +29,10 @@
             </select>
         
         <div class="corpsForm">
-            <fieldset><legend>Creation de Convention</legend>
-                <p><label>Nom et Prénom du tuteur: </label><input type = "text" name = "nomPrenomTuteur" size = 25 value="<?= $nomPrenomTuteur?>"></p>
-                <p><label>Numéro tel Tuteur: </label><input type = "number" name = "telTuteur" size = "25" value="<?= $telTuteur?>"></p>
-                <p><label>Adresse mail tuteur: </label><input type = "text" name = "mailTuteur" size = 15 value="<?= $mailTuteur?>"></p>
+            <fieldset><legend>Tuteur en entreprise</legend>
+                <p><label>Nom et Prénom: </label><input type = "text" name = "nomPrenomTuteur" size = 25 value="<?= $nomPrenomTuteur?>"></p>
+                <p><label>Téléphone: </label><input type = "number" name = "telTuteur" size = "25" value="<?= $telTuteur?>"></p>
+                <p><label>mail: </label><input type = "text" name = "mailTuteur" size = 15 value="<?= $mailTuteur?>"></p>
             </fieldset>
         </div>
             <br>
@@ -42,4 +42,5 @@
     <form method = "post" action = "index.php?uc=gererConventions&action=imprimer">
         <input type ="submit" value = "Imprimer">      
     </form>
+   
 </div>

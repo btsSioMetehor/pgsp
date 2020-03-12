@@ -20,7 +20,6 @@
  
         case "enregistrerAjout" :
             include("vues/v_sommaire.php");
-              //  $id = $_REQUEST['id'];
                 $nomPrenomTuteur = $_REQUEST['nomPrenomTuteur'];
                 $telTuteur = $_REQUEST['telTuteur'];
                 $mailTuteur = $_REQUEST['mailTuteur'];
@@ -39,7 +38,8 @@
             case "modifier" :
                 include("vues/v_sommaire.php");
                 $id = $_REQUEST['id'];
-                $idConvention =$_REQUEST['idConvention'];
+                $idConvention = $_REQUEST['idConvention'];
+                $_SESSION['idConvention'] = $idConvention;
                 $convention = $pdo->getConvention($idConvention);
                 $nomPrenomFormateur = $convention['nomPrenomFormateur'];
                 $nomPrenomTuteur = $convention['nomPrenomTuteur'];
@@ -52,18 +52,19 @@
                 include("vues/v_modifierConvention.php");
                 break;
     
-      /*  case "imprimer":
-            $idStagiaire = $_REQUEST['idStagiaire'];
+       case "imprimer":
             $idStage = $_SESSION['stage'];
-            $res = $pdo->demandeOk( $idStagiaire, $idStage);
-            $idEntreprise = $_REQUEST['idEntreprise'];
+            $idConvention = $_SESSION['idConvention'];
+            $convention = $pdo->getConvention($idConvention);
+            $formateur = $convention['nomPrenomFormateur'];
+            $idStagiaire = $convention['idStagiaire'];
             $stagiaire = $pdo->getLeStagiaire($idStagiaire);
             $entreprise = $pdo->getEntreprise($idEntreprise);
-            $url = "location: vues/pdf_demande.php?";
+            $url = "location: vues/pdf_convention.php?";
             $url .= "stagiaire=" . serialize($stagiaire); // pour faire passer un tableau dans l'url
             $url .=  "&entreprise=" . serialize($entreprise);
             header($url);
-         break;*/
+         break;
     }
 }
 else

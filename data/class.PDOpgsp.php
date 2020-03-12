@@ -285,7 +285,7 @@ public function ajoutConvention($nomPrenomTuteur, $telTuteur, $mailTuteur,  $idS
 */        
 public function getConvention($id)
 {
-    $req = "select nomPrenomTuteur, telTuteur,mailTuteur, nomPrenomFormateur, raisonSociale from convention 
+    $req = "select nomPrenomTuteur, telTuteur,mailTuteur, nomPrenomFormateur,idStagiaire, idEntreprise,  raisonSociale from convention 
     inner join formateur on convention.idFormateur = formateur.id 
     inner join entreprise on convention.idEntreprise = entreprise.id
     where convention.id = '" . $id . "'";
