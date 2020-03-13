@@ -4,8 +4,8 @@
         <div class="corpsForm">
             <fieldset><legend>Nouveau stage</legend>
                 <p><label>Id * (annee-numero):</label><input type = "text" name = "id" size = 6 value=""></p>
-                <p><label>Date début * : </label><input type = "text" name = "debut" size = 15 value=""></p>
-                <p><label>Date fin * : </label><input type = "text" name = "fin" size = "15" value=""></p>                              
+                <p><label>Date début *(jj/mm/aaaa) : </label><input type = "text" name = "debut" size = 15 value=""></p>
+                <p><label>Date fin *(jj/mm/aaaa) : </label><input type = "text" name = "fin" size = "15" value=""></p>                              
             </fieldset>
         </div>
             <br>

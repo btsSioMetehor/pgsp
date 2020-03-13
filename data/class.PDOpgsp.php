@@ -188,16 +188,19 @@ public function modifierEntreprise($id ,$raisonSociale ,$nomPrenom ,$tel ,$mail 
 */        
 public function getLesStages()
 {
-	$req = "select *  from stage";
+	$req = 'select id, DATE_FORMAT(dateDebut, "%d/%m/%Y") as dateDebut,DATE_FORMAT(dateFin, "%d/%m/%Y") as dateFin from stage';
 	$res =  self::$monPdo->query($req);
 	$lesLignes = $res->fetchAll();
 	return $lesLignes;
 }
 
 public function modifierStages($id,$debut, $fin){
+	$debut =  implode('-',array_reverse  (explode('/',$debut)));
+	$fin = implode('-',array_reverse  (explode('/',$fin)));
 	$req = "update stage set dateDebut = '" . $debut . "'";
 	$req .= ", dateFin = '" . $fin . "'";
 	$req .= " where id = '" . $id . "'";
+	var_dump ($req);
 	$res = self::$monPdo->exec($req);
 	return $res;
 }
@@ -208,6 +211,8 @@ public function modifierStages($id,$debut, $fin){
  * @return si la requête s'est bien effectuée
 */
 public function ajouterStage($id, $debut, $fin){
+	$debut =  implode('-',array_reverse  (explode('/',$debut)));
+	$fin = implode('-',array_reverse  (explode('/',$fin)));
 	$req = "insert into stage values('$id', '$debut', '$fin')";
 	$res = self::$monPdo->exec($req);
 	return $res;
