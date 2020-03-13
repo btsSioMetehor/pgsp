@@ -21,8 +21,6 @@ switch($uc){
 	case 'gererFormateurs' :
 		include("controleurs/c_gererFormateurs.php");
 		break;
-	case 'gererDemandes' :
-		include("controleurs/c_gererDemandes.php");
 	break;
 	case 'gererConventions' :
 		include("controleurs/c_gererConventions.php");

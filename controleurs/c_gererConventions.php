@@ -49,7 +49,9 @@
                 $raisons = $pdo->getLesEntreprises();
                 $formateurs = $pdo->getLesFormateurs();
                 $stagiaire = $pdo->getLeStagiaire($id);
-                include("vues/v_modifierConvention.ph        case "enregistrerModifications":
+                include("vues/v_modifierConvention.php");
+            break;
+            case "enregistrerModifications":
                 include("vues/v_sommaire.php");
                 $idFormateur = $_REQUEST['formateur'];
                 $idEntreprise = $_REQUEST['entreprise'];

@@ -256,9 +256,8 @@ public function modifierFormateur($id ,$nomPrenom ){
 */        
 public function getLesStagiairesConvention($option)
 {
-	$idStage = $_SESSION['stage'];
-	$req = "select stagiaire.id, nom, prenom, convention.id as idConvention from stagiaire LEFT OUTER JOIN convention on 
-	stagiaire.id = convention.idStagiaire where optionS = '" . $option . "' and idStage = '" . $idStage . "'";
+	$req = "select stagiaire.id, nom, prenom, convention.id as idConvention, idStage from stagiaire LEFT OUTER JOIN convention on 
+	stagiaire.id = convention.idStagiaire where optionS = '" . $option . "'";
 	$res =  self::$monPdo->query($req);
 	$lesLignes = $res->fetchAll();
 	return $lesLignes;
