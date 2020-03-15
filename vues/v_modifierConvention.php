@@ -17,7 +17,8 @@
         
         <p>Formateur:<b> <?= $nomPrenomFormateur?></b></p>
         
-        <p id="modifFormateur">Modifier formateur :
+        <p id="modifFormateur">Modifier le 
+        formateur :
             <select name="formateur">
                 <?php foreach($formateurs as $ligne){ ?>
                     <option value = "<?= $ligne['id']?>"><?= $ligne['nomPrenomFormateur']?></option>'>

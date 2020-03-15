@@ -11,6 +11,14 @@ switch ($action)
         break;
     case 'changerStageOuOption' :
         $lesStages = $pdo->getLesIdStages();
+        $optionActuelle = "";
+        $stageActuel = "";
+        if(isset($_SESSION['option'] )){
+            $optionActuelle = $_SESSION['option'];
+        }
+        if(isset($_SESSION['stage'] )){
+            $stageActuel = $_SESSION['stage'];
+            }
         include ('vues/v_choixStage.php'); 
         break;
     case 'controler':
@@ -25,6 +33,8 @@ switch ($action)
         else{
             $_SESSION['login'] = $login;
             $lesStages = $pdo->getLesIdStages();
+            $stageActuel = "";
+            $optionActuelle = "";
             include ('vues/v_choixStage.php'); 
         }
         break;
@@ -43,32 +53,5 @@ switch ($action)
         break;
     default : 
         include("vues/v_connexion.php");
-
-
-        case  'afficherMenu2' :
-            if(isset($_SESSION['login'])){
-                $nom = $_REQUEST['nom'];
-                $prenom = $_REQUEST['prenom'];
-                $tel = $_REQUEST['tel'];
-                $promotion = $_REQUEST['promotion'];
-                $mail = $_REQUEST['mail'];
-                $option = $_REQUEST['choixStage'];
-                $res = $pdo->ajouterStagiaire($nom, $prenom, $tel, $promotion, $mail,$option);
-                    if($res != 0){
-                        $message = "stagiaire ajouté";
-                    }
-                    else{
-                        $message = "Merci de recommencer ultérieurement";
-                    }
-                
-                include("vues/v_message.php");
-            }
-                
-            break;
-        
-
-
-
-        
 
 }

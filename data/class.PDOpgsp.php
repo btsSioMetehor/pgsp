@@ -249,7 +249,6 @@ public function ajouterFormateur($nomPrenom){
 public function modifierFormateur($id ,$nomPrenom ){
 	$req = "update formateur set nomPrenomFormateur = '" . $nomPrenom ."'";
 	$req .= " where id = " . $id ;
-	var_dump($req);
 	$res = self::$monPdo->exec($req);
 	return $res;
 
@@ -261,8 +260,9 @@ public function modifierFormateur($id ,$nomPrenom ){
 */        
 public function getLesStagiairesConvention($option)
 {
+	$promotion = substr($_SESSION['stage'],0,4);
 	$req = "select stagiaire.id, nom, prenom, convention.id as idConvention, idStage from stagiaire LEFT OUTER JOIN convention on 
-	stagiaire.id = convention.idStagiaire where optionS = '" . $option . "'";
+	stagiaire.id = convention.idStagiaire where optionS = '" . $option . "' and promotion = '". $promotion . "'";
 	$res =  self::$monPdo->query($req);
 	$lesLignes = $res->fetchAll();
 	return $lesLignes;

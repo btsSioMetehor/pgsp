@@ -4,8 +4,8 @@
         <div class="corpsForm">
             <fieldset><legend>Nouvelle entreprise</legend>
                 <p><label>Raison sociale * :</label><input type = "text" name = "raisonSociale" size = 25 value="" required></p>
-                <p><label>Adresse * : </label><input type = "text" name = "adresse" size = 15 value=""required></p>
-                <p><label>Nom et Prénom responsable * :</label><input type = "text" name = "nomPrenomResponsable" size = "25" value="" required></p>
+                <p><label>Adresse * : </label><input type = "text" name = "adresse" size = 50 value=""required></p>
+                <p><label>Nom Prénom responsable * :</label><input type = "text" name = "nomPrenomResponsable" size = "25" value="" required></p>
                 <p><label>Téléphone : </label><input type = "text" name = "telResponsable" size = "10" value=""></p>
                 <p><label>Mail : </label><input type = "text" name = "mailResponsable" size = "25" value=""></p>
 
