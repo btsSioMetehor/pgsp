@@ -14,11 +14,8 @@ foreach ($lesFormateurs as $ligne)
     <tr>
         <td><?=  $nomPrenom ?></td>
         <td><a href="index.php?uc=gererFormateurs&action=modifier&id=<?= $id ?>&nomPrenom=<?= $nomPrenom ?>" style="color:blue">Modification</td>
-      
-     
-  </tr>
+    </tr>
 <?php 
-
 }
 
 ?>

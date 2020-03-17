@@ -9,13 +9,154 @@
   </head>
   <body>
   <img src="http://localhost/pgspV2/images/logoGreta.jpg" alt="Logo" title="Logo"/>
- <h1>Convention de stage></h1><br>
-Nom du stagiaire : <?= $stagiaire['nom'] ?> <br>
-"Prénom du stagiaire : <?= $stagiaire['prenom'] ?><br><br>
-<h2>Entreprise</h2>
-Raison sociale : <?= $entreprise['raisonSociale'] ?><br>
-Adresse : <?= $entreprise['adresse'] ?><br>
-Nom du responsable : <?= $entreprise['nomPrenomResponsable'] ?><br>
+	
+	<table border="5">
+		<tr>
+			<td width="100%">
+				<div style="text-align: center"><h2>CONVENTION DE STAGE EN ENTREPRISE</h2></div>
+			</td>
+		</tr>
+	</table>
 
+ <h3><u>ARTICLE 1:</u></h3><br><h3>La présente convention règle les rapports,</h3>
+ 
+ <table border = "4">
+ <tr><td width="30%"><u>De l’entreprise :</u> 	
+<br>Adresse : 
+<br>Représentée par : Fonction : 
+<br>Tél :  	Mail : </td></tr>
+</table>
+<table border="4">
+<tr><td width="100%"><u>Avec le centre de formation </u>: <strong>GRETA METEHOR Paris</strong>
+	<br>Adresse : 70, Boulevard Bessières - 75847 PARIS CEDEX 17
+    <br>Représenté par :	Madame Claudine <strong>LEDOUX,</strong> 
+	<br>Fonction : Présidente-Ordonnatrice du GRETA METEHOR Paris et Proviseure de l’ENC.
+	<br><strong>Tél : 01 44 85 85 01	Mail : info@gretametehor.com</strong>
+	<br>Déclaré comme organisme de formation à la préfecture de région Ile de France 
+	<br>Sous le n° de déclaration : 1175P007675 / n° SIRET : 197 507 072 000 27 / CODE APE : 8559 A
+	</td>
+</tr>
+</table>
+<table border="4">
+<tr><td width="75%"><u>Pour le stage en entreprise de :</u>	
+	<br>Adresse: 
+	<br>Tél :	<div style="text-align: center;">Mail :</div>
+	<div style="text-align: center;">Dans le cadre de sa formation au :<strong> BTS SIO option SLAM</strong></div>
+	<br><div style="text-align: center;">Date de début : 03/09/2019	Date de fin : 26/05/2020 	Examen : MAI 2020</div>
+	</td></tr>	
+</table>
+ <h2><u>Article 2 :</u></h2>
+ Les stages en entreprise ont pour objet essentiel d’assurer l’application pratique de l’enseignement donné au GRETA METEHOR Paris.
+	
+<h2><u>Article 3 :</u></h2> 
+<strong>Le stage aura lieu du:<br></strong> Lundi <strong>10/02/2020 au</strong> Vendredi <strong>20/03/2020</strong>
+
+<strong><br>Le stagiaire est placé sous la responsabilité directe d’un tuteur :</strong>
+	<br>Tél :	Mail :	
+
+<strong><br> Interlocuteur au sein du GRETA METEHOR PARIS :</strong>
+
+<br>Le(s) référent(s) en centre de formation : 
+Mr Patrice <strong>GRAND</strong>	Responsable Pédagogique	
+<br>Mr Gérard <strong>CAER</strong>	Coordonnateur Administratif	Tél : 07 71 44 01 76
+<br>
+<br>
+<br><div style="text-align: center;">GRETA METEHOR Paris
+<br>SIRET : 19750707200027 – Numéro d’activité : 1175P007675
+<br>Siège : 70, Bd Bessières 75017 Paris – Tél 01 44 85 85 40</div>
+                                  <!--                                      	Site : http://www.gretametehor.com-->
+<!--<img src="durable.bmp" alt="durable"> -->
+<div style="image-rendering: auto;"><!--<img src="diversite.bmp.jpg" alt = "diverse">--></div>
+
+<table border="5">
+<tr>
+<td>
+</td>
+</tr>
+</table>
+<!--<img src="greta.bmp.jpg" alt="Logo">-->
+<div style="text-align: center;"><h2>Convention de stage en entreprise</h2></div>
+<h2><u>Article 4 :</u></h2> 
+	<br>Les modalités du stage en entreprise seront établies par le responsable en entreprise en fonction de la spécialisation du stagiaire. <br>L’entreprise s’engage, néanmoins, à confier au stagiaire une activité correspondant à la formation mentionnée ci-dessus. 
+	<br>
+	<strong><br>Activités, Missions prévues pendant la durée du stage (Résumé) :</strong>
+   <!--  <table border="5">
+		 <td>
+		 </td>
+     
+	 </table>-->
+
+<h2><u>Article 5 :</u></h2>
+Le stagiaire, pendant la durée du séjour dans l’entreprise, demeure stagiaire du GRETA METEHOR Paris. Il sera suivi par le responsable pédagogique. 
+L’entreprise s’engage à faciliter, au responsable pédagogique du stage, l’accès et la relation avec le lieu de travail habituel du stagiaire. Le tuteur en entreprise sera chargé du suivi du stagiaire en entreprise.
+<h2><u>Article 6 :</u></h2>
+Durant le stage, le stagiaire sera soumis au règlement intérieur en vigueur dans l’entreprise qui l’accueille, notamment en ce qui concerne les horaires. 
+Il pourrait être mis fin au stage, avant le terme prévu par la présente convention, 
+	<br>- soit par le tuteur, en cas de manquement grave aux règles de l’entreprise,
+	 <br>- soit par le stagiaire et (ou) le GRETA METEHOR PARIS, si les engagements pris lors de la signature n’étaient pas respectés. 
+	 Toutefois, cette rupture ne pourrait avoir lieu qu’après un entretien préalable de conciliation entre les différentes parties signataires.
+Par ailleurs, l’entreprise s’engage à informer le GRETA METEHOR PARIS dans les meilleurs délais, en cas d’absences, d’interruption du stage ou de toute difficulté faisant obstacle à la réussite de cette coopération.
+<br>
+
+
+<div style="text-align: center;">	<br>GRETA METEHOR Paris
+<br>SIRET : 19750707200027 – Numéro d’activité : 1175P007675
+<br>Siège : 70, Bd Bessières 75017 Paris – Tél 01 44 85 85 40
+       Site : <u>http://www.gretametehor.com</u></div>
+<!--<img src="durable.bmp.jpg" alt="Logo">--> 
+
+<!--<img src="diversité.bmp.jpg;" alt="Logo">-->
+<br>
+
+<!--<img src="greta.bmp.jpg" alt="Logo">-->  <div style="text-align: center;"><h1>Convention de stage en entreprise </h1></div>
+<br>
+  <h2><u>Article 7 :</u></h2>
+  <br>En cas d’accident survenant au stagiaire, soit au cours de ses activités de stage, soit au cours du trajet, la responsabilité civile du stagiaire, garantie souscrite par le GRETA METEHOR Paris, est couverte par : 
+  <br>La MAIF 19, rue Ferdinand Buisson 75781 PARIS CEDEX 16
+  <br>N° de sociétaire : 1105871 – tél : 01.46.10.51.00
+    <br>
+  <br>Dans ce cas, le GRETA METEHOR Paris s’engage à remplir les imprimés prévus à cet effet.
+
+
+<h2><u>Article 8 :</u></h2>
+L’entreprise peut décider de verser une indemnité de stage ou de remboursement de frais ou toute autre gratification à sa convenance mais le stagiaire ne pourra prétendre à aucune rémunération de droit relevant des dispositions de la formation professionnelle continue telle que définie dans la Loi n°2006-396 du 31 mars 2006 « pour l’égalité des chances », modifiée par la Loi n 2009-1437 du 24 novembre 2009.
+
+<h2><u>Article 9 :</u></h2>
+Les frais de formation à l’initiative de l’entreprise sont à la charge de celle-ci.
+
+<h2><u>Article 10 :</u></h2>
+L’entreprise devra fournir au GRETA METEHOR Paris une attestation de présence ainsi que, si nécessaire, des documents administratifs afférents au passage des différentes épreuves d'examen, complétés, signés et tamponnés (certificat de stage sur l’ensemble de la période et attestation de conformité des travaux réalisés).
+
+
+<h2><u>Article 11 :</u></h2>
+L’entreprise s’engage à fournir au stagiaire le matériel et les informations nécessaires à la bonne réalisation de son stage et à lui permettre de conserver toute la documentation utile à la préparation de ses dossiers et examen(s).
+
+En contrepartie, le stagiaire et l’équipe pédagogique s’engagent à garantir la confidentialité des informations ou documents communiqués.
+
+<br>Fait à .Paris.., le .15.. / .10. /.2019....<br>
+<br>
+<div style="text-align: right ;">
+	structure d’accueil,
+<br>(Nom, qualité du signataire
+et cachet)
+<br>Patrice Grand<br>
+<br>Entreprise individuelle<br>
+
+Entreprise indiqué</div>
+
+
+
+
+<div style="text-align: center;"> 
+	Stagiaire
+<br>(Nom, Prénom et 
+signature)<br></div>
+<br>L’Organisme de Formation
+(Nom, qualité du signataire
+et cachet)<br>
+<br>
+<br>
+<!--<img src="durable.bmp.jpg" alt="Logo">
+<img src="diversité.bmp.jpg" alt="Logo">-->
 </body>
 </html>
