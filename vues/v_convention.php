@@ -65,7 +65,7 @@ Mr Patrice <strong>GRAND</strong>	Responsable Pédagogique
 <br>SIRET : 19750707200027 – Numéro d’activité : 1175P007675
 <br>Siège : 70, Bd Bessières 75017 Paris – Tél 01 44 85 85 40</div>
                                   <!--                                      	Site : http://www.gretametehor.com-->
-<!--<img src="durable.bmp" alt="durable"> -->
+<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> 
 <div style="image-rendering: auto;"><!--<img src="diversite.bmp.jpg" alt = "diverse">--></div>
 
 <table border="5">
@@ -74,7 +74,7 @@ Mr Patrice <strong>GRAND</strong>	Responsable Pédagogique
 </td>
 </tr>
 </table>
-<!--<img src="greta.bmp.jpg" alt="Logo">-->
+<img src="http://localhost/pgspV2/images/greta.bmp" alt="Logo">
 <div style="text-align: center;"><h2>Convention de stage en entreprise</h2></div>
 <h2><u>Article 4 :</u></h2> 
 	<br>Les modalités du stage en entreprise seront établies par le responsable en entreprise en fonction de la spécialisation du stagiaire. <br>L’entreprise s’engage, néanmoins, à confier au stagiaire une activité correspondant à la formation mentionnée ci-dessus. 
@@ -103,12 +103,12 @@ Par ailleurs, l’entreprise s’engage à informer le GRETA METEHOR PARIS dans 
 <br>SIRET : 19750707200027 – Numéro d’activité : 1175P007675
 <br>Siège : 70, Bd Bessières 75017 Paris – Tél 01 44 85 85 40
        Site : <u>http://www.gretametehor.com</u></div>
-<!--<img src="durable.bmp.jpg" alt="Logo">--> 
+<img src="http://localhost/pgspV2/images/durable.jpg" alt="Logo">
 
-<!--<img src="diversité.bmp.jpg;" alt="Logo">-->
+<img src="http://localhost/pgspV2/images/diversite.jpg" alt="Logo">
 <br>
 
-<!--<img src="greta.bmp.jpg" alt="Logo">-->  <div style="text-align: center;"><h1>Convention de stage en entreprise </h1></div>
+<img src="http://localhost/pgspV2/images/greta.bmp" alt="Logo">  <div style="text-align: center;"><h1>Convention de stage en entreprise </h1></div>
 <br>
   <h2><u>Article 7 :</u></h2>
   <br>En cas d’accident survenant au stagiaire, soit au cours de ses activités de stage, soit au cours du trajet, la responsabilité civile du stagiaire, garantie souscrite par le GRETA METEHOR Paris, est couverte par : 
@@ -156,7 +156,7 @@ signature)<br></div>
 et cachet)<br>
 <br>
 <br>
-<!--<img src="durable.bmp.jpg" alt="Logo">
-<img src="diversité.bmp.jpg" alt="Logo">-->
+<img src="http://localhost/pgspV2/images/durable.jpg" alt="Logo">
+<img src="http://localhost/pgspV2/images/diversite.jpg" alt="Logo">
 </body>
 </html>
