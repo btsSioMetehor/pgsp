@@ -1,6 +1,9 @@
 <?php 
 $stagiaire = unserialize($_REQUEST['stagiaire']); // pour récupérer le tableau passé dans l'url
 $entreprise = unserialize($_REQUEST['entreprise']);
+$stage = unserialize($_REQUEST['stage']);
+$convention = unserialize($_REQUEST['convention']);
+$formateur = $_REQUEST['formateur'];
 require_once '../data/class.PDOpgsp.php';
 $pdo = PdoPgsp::getPdoPgsp();
 require_once '../vendor/autoload.php';

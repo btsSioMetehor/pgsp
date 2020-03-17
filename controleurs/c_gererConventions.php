@@ -79,14 +79,18 @@
             $idStage = $_SESSION['stage'];
             $idConvention = $_SESSION['idConvention'];
             $convention = $pdo->getConvention($idConvention);
+            $stage = $pdo->getLeStage($idStage);
             $formateur = $convention['nomPrenomFormateur'];
             $idStagiaire = $convention['idStagiaire'];
+            $idEntreprise = $convention['idEntreprise'];
             $stagiaire = $pdo->getLeStagiaire($idStagiaire);
             $entreprise = $pdo->getEntreprise($idEntreprise);
             $url = "location: vues/pdf_convention.php?";
             $url.= "formateur=" . $formateur;
             $url .= "&stagiaire=" . serialize($stagiaire); // pour faire passer un tableau dans l'url
             $url .=  "&entreprise=" . serialize($entreprise);
+            $url .= "&stage=" . serialize($stage);
+            $url .= "&convention=" . serialize($convention);
             header($url);
          break;
     }

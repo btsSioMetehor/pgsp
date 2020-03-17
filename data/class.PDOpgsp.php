@@ -75,6 +75,18 @@ public function getLesIdStages()
 	return $lesLignes;
 }
 /**
+ * Retourne le stage à partir de son id
+ * 
+ * @return le stage
+*/        
+public function getLeStage($idStage)
+{
+	$req = "select *  from stage where id = '" . $idStage ."'" ;
+	$res =  self::$monPdo->query($req);
+	$laLigne = $res->fetch();
+	return $laLigne;
+}
+/**
  * Retourne les stagiaires d'une option et d'une promotion
  *
  * @return les id, nom et prenom des stagiaires 
@@ -200,7 +212,6 @@ public function modifierStages($id,$debut, $fin){
 	$req = "update stage set dateDebut = '" . $debut . "'";
 	$req .= ", dateFin = '" . $fin . "'";
 	$req .= " where id = '" . $id . "'";
-	var_dump ($req);
 	$res = self::$monPdo->exec($req);
 	return $res;
 }
@@ -289,8 +300,9 @@ public function ajoutConvention($nomPrenomTuteur, $telTuteur, $mailTuteur,  $idS
 */        
 public function getConvention($id)
 {
-    $req = "select nomPrenomTuteur, telTuteur,mailTuteur, nomPrenomFormateur,idStagiaire, idEntreprise,  raisonSociale from convention 
-    inner join formateur on convention.idFormateur = formateur.id 
+	$req = "select nomPrenomTuteur, telTuteur,mailTuteur, nomPrenomFormateur,idStagiaire,raisonSociale, idEntreprise ";
+	$req .= "  from convention ";
+    $req .= " inner join formateur on convention.idFormateur = formateur.id 
     inner join entreprise on convention.idEntreprise = entreprise.id
     where convention.id = '" . $id . "'";
     $res =  self::$monPdo->query($req);
