@@ -9,7 +9,6 @@
   </head>
   <body>
   <img src="http://localhost/pgspV2/images/logoGreta.jpg" alt="Logo" title="Logo"/>
-	
 	<table border="1">
 		<tr>
 			<td width="700">
@@ -17,7 +16,8 @@
 			</td>
 		</tr>
 	</table>
- <h3><u>ARTICLE 1:</u></h3><h3>La présente convention règle les rapports,</h3>
+ <h3><u>ARTICLE 1:</u></h3>
+ <h4>La présente convention règle les rapports,</h4>
   <table border="1">
  	<tr>
 		 <td width="700"><u>De l’entreprise :</u> <strong><?= $entreprise['raisonSociale'] ?></strong> 
@@ -56,23 +56,23 @@
 <strong>Le stage aura lieu du:<br></strong> Lundi <strong><?= implode('/',array_reverse  (explode('-',$stage['dateDebut'])))?></strong> 
 au Vendredi <strong><?= implode('/',array_reverse  (explode('-',$stage['dateFin']))) ?></strong>
 
-<strong><br>Le stagiaire est placé sous la responsabilité directe d’un tuteur : <?= $convention['nomPrenomTuteur'] ?></strong>
+<strong><br>Dans l'entreprise, le stagiaire est placé sous la responsabilité directe d’un tuteur : <?= $convention['nomPrenomTuteur'] ?></strong>
 	<br>Tél :<?= $convention['telTuteur'] ?>	Mail :	<?= $convention['mailTuteur'] ?>
-
-<strong><br> Interlocuteur au sein du GRETA METEHOR PARIS :</strong>
-<br>Le(s) référent(s) en centre de formation : 
-<strong><?= $formateur ?></strong>	Responsable Pédagogique	
-<br>Mr Gérard <strong>CAER</strong>	Coordonnateur Administratif	Tél : 07 71 44 01 76
+<br>
+<strong><br> Interlocuteurs au sein du GRETA METEHOR PARIS :</strong><br>
+<strong>- <?= $formateur ?></strong>	Formateur	
+<br><strong>- M. Gérard CAER</strong>	Coordonnateur Administratif,	Tél : 07 71 44 01 76
 <br>
 <br><div style="text-align: center;">GRETA METEHOR Paris
 <br>SIRET : 19750707200027 – Numéro d’activité : 1175P007675
 <br>Siège : 70, Bd Bessières 75017 Paris – Tél 01 44 85 85 40
  <br>  Site : http://www.gretametehor.com</div>
 <table><tr><td width="300" >
-	<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> </td><td width="200">page 1/3 </td><td width="400">
+	<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> </td><td width="250">page 1/3 </td><td width="400">
 		<div style="image-rendering: auto;"><img src="http://localhost/pgspV2/images/diversite.jpg" alt = "diverse"></div></td>
 	</tr>
 </table>
+<br><br><br>
 <img src="http://localhost/pgspV2/images/logoGreta.jpg" alt="Logo" title="Logo"/>
 <table border="1">
 		<tr>
@@ -112,10 +112,10 @@ Par ailleurs, l’entreprise s’engage à informer le GRETA METEHOR PARIS dans 
 <h2><u>Article 8 :</u></h2>
 L’entreprise peut décider de verser une indemnité de stage ou de remboursement de frais ou toute autre gratification à sa convenance mais le stagiaire ne pourra prétendre à aucune rémunération de droit relevant des dispositions de la formation professionnelle continue telle que définie dans la Loi n°2006-396 du 31 mars 2006 « pour l’égalité des chances », modifiée par la Loi n 2009-1437 du 24 novembre 2009.
 
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 
 <table><tr><td width="300" >
-	<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> </td><td width="200">page 2/3 </td><td width="400">
+	<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> </td><td width="250">page 2/3 </td><td width="400">
 		<div style="image-rendering: auto;"><img src="http://localhost/pgspV2/images/diversite.jpg" alt = "diverse"></div></td>
 	</tr>
 </table>
@@ -158,10 +158,10 @@ En contrepartie, le stagiaire et l’équipe pédagogique s’engagent à garant
 </table>
 
 	
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br>
 <table><tr><td width="300" >
-	<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> </td><td width="200">page 3/3 </td><td width="400">
+	<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> </td><td width="250">page 3/3 </td><td width="400">
 		<div style="image-rendering: auto;"><img src="http://localhost/pgspV2/images/diversite.jpg" alt = "diverse"></div></td>
 	</tr>
 </table>
