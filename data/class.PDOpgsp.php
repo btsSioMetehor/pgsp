@@ -23,6 +23,8 @@ class PdoPgsp
       	private static $mdp='' ;	
 		private static $monPdo;
 		private static $monPdoPgsp = null;
+
+		
 /**
  * Constructeur privé, crée l'instance de PDO qui sera sollicitée
  * pour toutes les méthodes de la classe
@@ -286,8 +288,8 @@ public function getLesStagiairesConvention($option)
 */
 public function ajoutConvention($nomPrenomTuteur, $telTuteur, $mailTuteur,  $idStagiaire, $idStage, $idEntreprise, $idFormateur)
 {
-    $req = "insert into convention ( nomPrenomTuteur, telTuteur, mailTuteur, conventionO_N, idStagiaire, idStage, idEntreprise, idFormateur)
-     values( '$nomPrenomTuteur', '$telTuteur', '$mailTuteur', 1, '$idStagiaire', '$idStage', '$idEntreprise', '$idFormateur')";
+    $req = "insert into convention ( nomPrenomTuteur, telTuteur, mailTuteur,  idStagiaire, idStage, idEntreprise, idFormateur)
+     values( '$nomPrenomTuteur', '$telTuteur', '$mailTuteur', '$idStagiaire', '$idStage', '$idEntreprise', '$idFormateur')";
 	
 	 $res = self::$monPdo->exec($req);
      return $res;

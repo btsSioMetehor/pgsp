@@ -8,7 +8,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
   </head>
   <body>
-  <img src="http://localhost/pgspV2/images/logoGreta.jpg" alt="Logo" title="Logo"/>
+	
+  <img src="<?= $site . "logoGreta.jpg"?>" alt="Logo" title="Logo"/>
 	<table border="1">
 		<tr>
 			<td width="700">
@@ -68,12 +69,12 @@ au Vendredi <strong><?= implode('/',array_reverse  (explode('-',$stage['dateFin'
 <br>Siège : 70, Bd Bessières 75017 Paris – Tél 01 44 85 85 40
  <br>  Site : http://www.gretametehor.com</div>
 <table><tr><td width="300" >
-	<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> </td><td width="250">page 1/3 </td><td width="400">
-		<div style="image-rendering: auto;"><img src="http://localhost/pgspV2/images/diversite.jpg" alt = "diverse"></div></td>
+	<img src="<?= $site . "durable.jpg" ?>" alt="durable"> </td><td width="250">page 1/3 </td><td width="400">
+		<div style="image-rendering: auto;"><img src="<?= $site . "diversite.jpg" ?>" alt = "diverse"></div></td>
 	</tr>
 </table>
 <br><br><br>
-<img src="http://localhost/pgspV2/images/logoGreta.jpg" alt="Logo" title="Logo"/>
+<img src="<?= $site . "logoGreta.jpg"?>" alt="Logo" title="Logo"/>
 <table border="1">
 		<tr>
 			<td width="700">
@@ -115,12 +116,12 @@ L’entreprise peut décider de verser une indemnité de stage ou de rembourseme
 <br><br><br><br><br><br><br><br><br>
 
 <table><tr><td width="300" >
-	<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> </td><td width="250">page 2/3 </td><td width="400">
-		<div style="image-rendering: auto;"><img src="http://localhost/pgspV2/images/diversite.jpg" alt = "diverse"></div></td>
+	<img src="<?= $site . "durable.jpg" ?>" alt="durable"> </td><td width="250">page 2/3 </td><td width="400">
+		<div style="image-rendering: auto;"><img src="<?= $site . "diversite.jpg" ?>" alt = "diverse"></div></td>
 	</tr>
 </table>
 <br><br><br><br>
-<img src="http://localhost/pgspV2/images/logoGreta.jpg" alt="Logo" title="Logo"/>
+<img src="<?= $site . "logoGreta.jpg"?>" alt="Logo" title="Logo"/>
 	
 	<table border="1">
 		<tr>
@@ -161,8 +162,8 @@ En contrepartie, le stagiaire et l’équipe pédagogique s’engagent à garant
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br>
 <table><tr><td width="300" >
-	<img src="http://localhost/pgspV2/images/durable.jpg" alt="durable"> </td><td width="250">page 3/3 </td><td width="400">
-		<div style="image-rendering: auto;"><img src="http://localhost/pgspV2/images/diversite.jpg" alt = "diverse"></div></td>
+	<img src="<?= $site . "durable.jpg" ?>" alt="durable"> </td><td width="250">page 3/3 </td><td width="400">
+		<div style="image-rendering: auto;"><img src="<?= $site . "diversite.jpg" ?>" alt = "diverse"></div></td>
 	</tr>
 </table>
 </body>
