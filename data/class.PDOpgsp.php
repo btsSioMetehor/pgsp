@@ -324,6 +324,16 @@ public function enregModifsConvention($idConvention, $idFormateur,$idEntreprise,
 	$res = self::$monPdo->exec($req);
 	return $res;
 }
+
+/*----------------------------------------Gestion des etats-----------------------------------*/
+public function getLesConventions($idStage, $option){
+	$req = "select *  from convention inner join stagiaire on convention.idStagiaire = stagiaire.id ";
+	$req .= " inner join entreprise on convention.idEntreprise = entreprise.id ";
+	$req .= " where convention.idStage = '" . $idStage . "' and stagiaire.optionS= '" . $option ."'";
+	$res =  self::$monPdo->query($req);
+    $laLigne = $res->fetchAll();
+    return $laLigne;
+}
 } // fin classe 
 	
 

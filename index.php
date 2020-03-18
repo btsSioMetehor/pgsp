@@ -28,6 +28,9 @@ switch($uc){
 	case 'gererStages' :
 		include("controleurs/c_gererStages.php");
 	break;
+	case 'gererEtats' :
+		include("controleurs/c_gererEtats.php");
+	break;
 
 }
 include("vues/v_pied.php") ;

@@ -28,11 +28,11 @@
            <li class="smenu">
               <a href="index.php?uc=gererFormateurs&action=voir" title="voir les formateurs">Gérer les formateurs</a>
            </li>
-           <!-- <li class="smenu">
-              <a href="index.php?uc=gererDemandes&action=voir" title="voir les stagiaires">Gérer les demandes de convention</a>
-           </li> -->
            <li class="smenu">
               <a href="index.php?uc=gererConventions&action=voir" title="voir les stagiaires">Gérer les Conventions</a>
+           </li>
+           <li class="smenu">
+              <a href="index.php?uc=gererEtats&action=voirEtatStage" title="voir état stage">Voir état stage</a>
            </li>
  	         <li class="smenu">
               <a href="index.php?uc=connexion&action=deconnexion" title="Se déconnecter">Déconnexion</a>
