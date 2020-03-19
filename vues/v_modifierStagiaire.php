@@ -8,6 +8,7 @@
                 <p><label>Prénom : </label><input type = "text" name = "prenom" size = 15 value = "<?= $prenom ?>"></p>
                 <p><label>Téléphone : </label><input type = "text" name = "tel" size = "10" value ="<?= $telephone ?>"></p>
                 <p><label>Mail : </label><input type = "text" name = "mail" size = "25" value = "<?= $mail ?>"></p>
+                <p><label>Adresse : </label><input type = "text" name = "adresse" size = "40" value = "<?= $adresse ?>"></p>
                 <p><label>Promotion * : </label><select name="promotion" ><?php foreach($lesPromotions as $unePromotion){?>
                                                                         <option value ="<?= $unePromotion?>">
                                                                         <?= $unePromotion?></option>

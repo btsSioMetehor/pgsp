@@ -120,9 +120,9 @@ public function getLeStagiaire($id)
  *
  * @return si la requête s'est bien effectuée
 */
-public function ajouterStagiaire($nom, $prenom, $tel, $mail, $promotion){
+public function ajouterStagiaire($nom, $prenom, $tel, $mail, $promotion, $adresse){
 	$option = $_SESSION['option'];
-	$req = "insert into stagiaire(nom, prenom, telephone, mail, promotion, optionS)  values('$nom', '$prenom', '$tel', '$mail', '$promotion','$option')";
+	$req = "insert into stagiaire(nom, prenom, telephone, mail, promotion, optionS, adresseS)  values('$nom', '$prenom', '$tel', '$mail', '$promotion','$option','$adresse')";
 	$res = self::$monPdo->exec($req);
 	return $res;
 }
@@ -131,12 +131,13 @@ public function ajouterStagiaire($nom, $prenom, $tel, $mail, $promotion){
  *
  * @return si la requête s'est bien effectuée
 */
-public function modifierStagiaire($id,$nom,$prenom ,$tel,$mail,$promotion){
+public function modifierStagiaire($id,$nom,$prenom ,$tel,$mail,$promotion, $adresse){
 	$req = "update stagiaire set nom = '" . $nom ."'";
 	$req .= ", prenom = '" . $prenom ."'";
 	$req .= ", mail = '" . $mail ."'";
 	$req .= ", telephone = '" . $tel ."'";
 	$req .= ", promotion = '" .$promotion ."'";
+	$req .= ", adresseS = '" .$adresse ."'";
 	$req .= " where id = " . $id;
 	$res = self::$monPdo->exec($req);
 	return $res;

@@ -12,6 +12,7 @@
                 <p><label>Option (SISR ou SLAM) : </label> <?= $_SESSION['option']?></p>
                 <p><label>Téléphone : </label><input type = "text" name = "tel" size = "10" value=""></p>
                 <p><label>Mail : </label><input type = "text" name = "mail" size = "25" value=""></p>
+                <p><label>Adresse : </label><input type = "text" name = "adresse" size = "40" value=""></p>
                 
                
             </fieldset>

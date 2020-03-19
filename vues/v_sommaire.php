@@ -10,7 +10,10 @@
         <ul id="menuList">
             <li id="pres" >
                Bonjour 
-               <?php echo $_SESSION['login']. " vous gerer le stage " .$_SESSION['stage'] . " pour les " . $_SESSION['option'];?>
+               <?= $_SESSION['login']?>
+            </li>
+            <li id="pres" >
+              Vous gérez le stage <?= $_SESSION['stage'] ?> pour les <?= $_SESSION['option']?>
             </li>
             <br>
             <li class="smenu">
@@ -29,15 +32,21 @@
               <a href="index.php?uc=gererFormateurs&action=voir" title="voir les formateurs">Gérer les formateurs</a>
            </li>
            <li class="smenu">
-              <a href="index.php?uc=gererConventions&action=voir" title="voir les stagiaires">Gérer les Conventions</a>
+              <a href="index.php?uc=gererConventions&action=voir" title="voir les conventions">Gérer les Conventions</a>
            </li>
-           <li class="smenu">
-              <a href="index.php?uc=gererEtats&action=voirEtatStage" title="voir état stage">Voir état stage</a>
-           </li>
+          
  	         <li class="smenu">
               <a href="index.php?uc=connexion&action=deconnexion" title="Se déconnecter">Déconnexion</a>
            </li>
          </ul>
-        
+      <ul id="menuList">
+         <li id="pres" >
+               Imprimer des états 
+               
+         </li>
+         <li class="smenu">
+              <a href="index.php?uc=gererEtats&action=voirEtatStage" title="Imprimer état des stages">Etat des stages</a>
+         </li>
+      </ul>
     </div>
     

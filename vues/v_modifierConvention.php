@@ -2,28 +2,41 @@
 <h1><b></b></h1>
     <form method = "post" action = "index.php?uc=gererConventions&action=enregistrerModifications">
     
-        <p>Nom du stagiaire : <?= $stagiaire['nom'] ?></p>
+        <p>Nom du stagiaire :<strong> <?= $stagiaire['nom'] ?><strong></p>
         
         <p>Prenom du stagiaire : <?= $stagiaire['prenom'] ?></p>
         
-        <p>Nom de l'entreprise : <b><?= $raisonSociale?></b></p>
-        
-        <p id="modifEntreprise">Modifier l'entreprise :
-            <select name="entreprise">
+            
+        <div class="corpsForm">
+            <fieldset><legend>Entreprise</legend>
+                <p><label><p>Nom de l'entreprise : <strong><?= $raisonSociale?></strong></label></p>
+               <p><label>Autre entreprise : </label>
+                <select name="entreprise">
                 <?php foreach($raisons as $ligne){ ?>
                     <option value = "<?= $ligne['id']?>"><?= $ligne['raisonSociale']?></option>'>
                 <?php } ?>
             </select>
-        
-        <p>Formateur:<b> <?= $nomPrenomFormateur?></b></p>
-        
-        <p id="modifFormateur">Modifier le 
-        formateur :
-            <select name="formateur">
+            </p>
+                <p><label><a href="index.php?uc=gererEntreprises&action=ajouter" title="Ajouter une entreprise" style="color:#f00">
+                    Nouvelle entreprise</a></label></p>
+            </fieldset>
+        </div>
+        <div class="corpsForm">
+            <fieldset><legend>Formateur</legend>
+                <p><label><p>Formateur : <strong><?= $nomPrenomFormateur?></strong></p>
+                <p><label>Autre formateur: </label><select name="formateur">
                 <?php foreach($formateurs as $ligne){ ?>
                     <option value = "<?= $ligne['id']?>"><?= $ligne['nomPrenomFormateur']?></option>'>
                 <?php } ?>
-            </select>
+            </select></p>
+                <p><label>  <a href="index.php?uc=gererFormateurs&action=ajouter" title="Ajouter un formateur" style="color:#f00">
+                    Nouveau formateur</a></label></p>
+            </fieldset>
+        </div>   
+       
+        
+       
+            
         
         <div class="corpsForm">
             <fieldset><legend>Tuteur en entreprise</legend>

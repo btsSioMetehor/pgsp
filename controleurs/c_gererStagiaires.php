@@ -13,13 +13,13 @@
             include("vues/v_ajouterStagiaire.php");
         break;
         case "enregistrerAjout":
-
             $nom = $_REQUEST['nom'];
             $prenom = $_REQUEST['prenom'];
             $tel = $_REQUEST['tel'];
             $promotion = $_REQUEST['promotion'];
             $mail = $_REQUEST['mail'];
-            $res = $pdo->ajouterStagiaire($nom, $prenom, $tel,$mail ,$promotion);
+            $adresse = $_REQUEST['adresse'];
+            $res = $pdo->ajouterStagiaire($nom, $prenom, $tel,$mail ,$promotion, $adresse);
             if($res != 0)
                 $message = "stagiaire ajouté";
             else
@@ -35,6 +35,7 @@
             $prenom = $ligne['prenom'];
             $mail = $ligne['mail'];
             $telephone = $ligne['telephone'];
+            $adresse = $ligne['adresseS'];
             $lesPromotions = array("1"=>"2019","2"=>"2020", "3"=>"2021", "4"=>"2022") ;
             include("vues/v_modifierStagiaire.php");
             break;
@@ -46,7 +47,8 @@
             $tel = $_REQUEST['tel'];
             $mail = $_REQUEST['mail'];
             $promotion = $_REQUEST['promotion'];
-            $res = $pdo->modifierStagiaire($id,$nom,$prenom ,$tel,$mail,$promotion);
+            $adresse = $_REQUEST['adresse'];
+            $res = $pdo->modifierStagiaire($id,$nom,$prenom ,$tel,$mail,$promotion, $adresse);
             if($res != 0)
                 $message = "modification(s) éffectuée(s)";
             else
