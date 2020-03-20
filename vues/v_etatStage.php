@@ -8,14 +8,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
   </head>
   <body>
-  <h4> Récapitulatif conçernant les stagiaires en <?= $option ?></h4>
+  <h3
+  > Récapitulatif des conventions du stage <?= $numStage ?> pour les stagiaires <?= $option ?> rentrés en formation en <?= $annee ?>  </h3>
   <table border="1">
   <tr style="text-align:center">
         <th> Nom </th><th> Prénom </th> <th> téléphone </th><th> adresse stagiaire </th><th> Raison sociale </th>
         <th> Adresse Entreprise</th><th> Nom tuteur </th><th> tel tuteur </th>
     </tr>
-  
-
   <?php
   
     foreach($conventions as $uneConvention){

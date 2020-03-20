@@ -23,7 +23,7 @@ class PdoPgsp
       	private static $mdp='' ;	
 		private static $monPdo;
 		private static $monPdoPgsp = null;
-
+		
 		
 /**
  * Constructeur privé, crée l'instance de PDO qui sera sollicitée
@@ -150,7 +150,7 @@ public function modifierStagiaire($id,$nom,$prenom ,$tel,$mail,$promotion, $adre
 */        
 public function getLesEntreprises()
 {
-	$req = "select id, raisonSociale, adresse  from entreprise ";
+	$req = "select * from entreprise ";
 	$res =  self::$monPdo->query($req);
 	$lesLignes = $res->fetchAll();
 	return $lesLignes;
@@ -336,6 +336,21 @@ public function getLesConventions($idStage, $option){
 	$res =  self::$monPdo->query($req);
     $laLigne = $res->fetchAll();
     return $laLigne;
+}
+
+/**
+ * Retourne les entreprises d'une option
+ *
+ * @return les id, raison sociale et adresse, tel et mail des entreprises 
+*/
+public function getLesEntreprisesParOption($option)
+{
+    $req = "select distinct raisonSociale,adresse,nomPrenomResponsable,telResponsable,mailResponsable from entreprise inner join convention on entreprise.id= convention.idEntreprise ";
+    $req .=" inner join stagiaire on convention.idStagiaire= stagiaire.id";
+    $req .= " where stagiaire.optionS = '" . $option . "'";
+    $res =  self::$monPdo->query($req);
+    $lesLignes = $res->fetchAll();
+    return $lesLignes;
 }
 } // fin classe 
 	

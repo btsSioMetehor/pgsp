@@ -47,6 +47,9 @@
          <li class="smenu">
               <a href="index.php?uc=gererEtats&action=voirEtatStage" title="Imprimer état des stages">Etat des stages</a>
          </li>
+         <li class="smenu">
+              <a href="index.php?uc=gererEtats&action=voirEtatEntreprise" title="Imprimer état des entreprise">Etat des entreprises</a>
+         </li>
       </ul>
     </div>
     

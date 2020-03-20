@@ -7,6 +7,10 @@ if(isset($_SESSION['login'])){     // sécurise l'accès à cette page
             $url = "location: vues/pdf_etatStage.php";
             header($url);
         break;
+        case  "voirEtatEntreprise" :
+            $url = "location: vues/pdf_etatEntreprises.php";
+            header($url);
+        break;
     }
 }
 else

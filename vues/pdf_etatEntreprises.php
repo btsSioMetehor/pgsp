@@ -2,14 +2,11 @@
 session_start();
 require_once '../data/class.PDOpgsp.php';
 $pdo = PdoPgsp::getPdoPgsp();
-$idStage = $_SESSION['stage'];
-$annee = substr($idStage,0,4);
-$numStage = substr($idStage,5,1);
 $option = $_SESSION['option'];
-$conventions = $pdo->getLesConventions($idStage, $option);
+$lesEntreprises = $pdo->getLesEntreprisesParOption($option);
 require_once '../vendor/autoload.php';
 ob_start();
-require_once '../vues/v_etatStage.php';
+require_once '../vues/v_etatEntreprises.php';
 $content = ob_get_clean();
 use Spipu\Html2Pdf\Html2Pdf;
 $html2pdf = new Html2Pdf("L", "A4", "en");
